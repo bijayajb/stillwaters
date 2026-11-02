@@ -6,232 +6,637 @@
   <meta name="theme-color" content="#f4f0e7">
   <meta name="description" content="Still Waters Wellbeing offers compassionate, confidential, evidence-based psychological support for adults in Mornington and the Mornington Peninsula.">
   <title>Still Waters Wellbeing | Find your way back to stillness</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --forest:#183f35; --forest-2:#315b4b; --sage:#82947c; --sage-light:#dce2d5;
-      --cream:#f4f0e7; --paper:#fbf9f4; --sand:#e8dfce; --terra:#bd704d;
-      --terra-dark:#99583e; --ink:#344139; --muted:#6d776e; --line:rgba(24,63,53,.16);
-      --serif:"Cormorant Garamond",Georgia,serif; --sans:"DM Sans",Arial,sans-serif;
-      --max:1180px;
+      --forest: #183f35;
+      --forest-2: #315b4b;
+      --sage: #82947c;
+      --sage-light: #dce2d5;
+      --cream: #f4f0e7;
+      --paper: #fbf9f4;
+      --sand: #e8dfce;
+      --terra: #bd704d;
+      --terra-dark: #99583e;
+      --ink: #344139;
+      --muted: #6d776e;
+      --line: rgba(24, 63, 53, .16);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --max: 1180px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.7}
-    a{color:inherit;text-decoration:none}
-    button,input,select,textarea{font:inherit}
-    img{max-width:100%;display:block}
-    .wrap{width:min(var(--max),calc(100% - 56px));margin:auto}
-    .eyebrow{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;font-weight:700;color:var(--sage)}
-    .serif{font-family:var(--serif);font-weight:400}
-    h1,h2,h3,p{margin-top:0}
-    h2{font:400 clamp(2.8rem,5vw,4.9rem)/.98 var(--serif);letter-spacing:-.025em;color:var(--forest)}
-    .btn{display:inline-flex;align-items:center;gap:13px;background:var(--terra);color:white;padding:15px 23px;border-radius:3px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;transition:.25s}
-    .btn:hover{background:var(--terra-dark);transform:translateY(-2px)}
-    .btn-forest{background:var(--forest)} .btn-forest:hover{background:var(--forest-2)}
-    .underlink{display:inline-flex;align-items:center;gap:12px;border-bottom:1px solid currentColor;padding-bottom:5px;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
-    /* Soft, floating navigation — deliberately unlike a corporate full-bleed header */
-    .site-nav{position:absolute;z-index:10;top:22px;left:0;right:0}
-    .nav-inner{min-height:82px;padding:10px 22px 10px 18px;border-radius:5px;background:rgba(250,248,241,.94);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;gap:25px;box-shadow:0 10px 40px rgba(10,35,27,.08)}
-    .brand img{width:188px;height:auto;max-height:68px;object-fit:contain}
-    .nav-links{display:flex;align-items:center;gap:27px}
-    .nav-links a{font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;color:var(--forest);font-weight:700}
-    .nav-links a:hover{color:var(--terra)}
-    .nav-cta{border:1px solid var(--forest);padding:11px 16px;font-size:.63rem;letter-spacing:.11em;text-transform:uppercase;color:var(--forest);font-weight:700;white-space:nowrap}
-    .nav-cta:hover{background:var(--forest);color:white}
-    .menu-toggle{display:none;background:none;border:1px solid var(--line);padding:9px 12px;color:var(--forest)}
-    /* Hero: cinematic forest, natural colour and a soft editorial text panel */
-    .hero{min-height:790px;min-height:min(900px,100svh);position:relative;display:flex;align-items:center;overflow:hidden;background:#294b3e}
-    .hero:before{content:"";position:absolute;inset:0;background:url("assets/forest-waterfall-hero.jpg") center 48%/cover no-repeat;transform:scale(1.02)}
-    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,42,32,.13),rgba(13,42,32,.03) 60%),linear-gradient(0deg,rgba(10,33,25,.28),transparent 45%)}
-    .hero-content{position:relative;z-index:1;padding-top:110px;padding-bottom:65px}
-    .hero-card{max-width:660px;padding:46px 48px 43px;background:rgba(248,245,236,.92);backdrop-filter:blur(8px);border-radius:2px 65px 2px 2px;box-shadow:0 25px 80px rgba(7,25,18,.15)}
-    .hero-card .eyebrow{color:var(--terra-dark);margin-bottom:20px}
-    .hero h1{font:400 clamp(4rem,7vw,7rem)/.83 var(--serif);letter-spacing:-.045em;color:var(--forest);margin:0 0 24px}
-    .hero h1 em{color:var(--sage);font-weight:400}
-    .hero-intro{max-width:490px;color:#536057;font-size:.96rem;line-height:1.85;margin-bottom:28px}
-    .hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:25px}
-    .hero-note{position:absolute;z-index:2;right:max(28px,calc((100vw - var(--max))/2));bottom:30px;color:#fff;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;text-shadow:0 1px 8px #173d32}
-    .hero-note:before{content:"";display:inline-block;width:35px;height:1px;background:#fff;vertical-align:middle;margin-right:12px}
-    .intro{background:var(--cream);padding:112px 0 120px}
-    .intro-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:90px;align-items:start}
-    .intro-aside{padding-top:10px}
-    .round-mark{width:78px;height:78px;border:1px solid rgba(24,63,53,.3);border-radius:50%;display:grid;place-items:center;color:var(--terra);font:italic 2.3rem var(--serif);margin:0 0 25px}
-    .intro-aside p{max-width:230px;color:var(--muted);font:italic 1.35rem/1.35 var(--serif)}
-    .intro h2{max-width:780px;margin-bottom:25px}
-    .intro h2 em{color:var(--terra);font-weight:400}
-    .intro-copy{max-width:720px;color:#5c675f;font-size:.94rem}
-    .intro-copy p{margin-bottom:15px}
-    .section{padding:112px 0}
-    .section-top{display:grid;grid-template-columns:1fr .65fr;gap:50px;align-items:end;margin-bottom:48px}
-    .section-top .eyebrow{margin-bottom:17px}
-    .section-top h2{max-width:680px;margin:0}
-    .section-top p{color:var(--muted);font-size:.88rem;max-width:350px;margin:0}
-    /* Support: soft botanical tiles, not rigid dark corporate cards */
-    .support{background:var(--paper)}
-    .support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-    .support-card{position:relative;min-height:255px;padding:29px 28px 27px;background:var(--cream);border-radius:2px 42px 2px 2px;transition:transform .25s,background .25s}
-    .support-card:nth-child(2),.support-card:nth-child(5){background:#e8ede4}
-    .support-card:nth-child(3),.support-card:nth-child(6){background:#f0e7db}
-    .support-card:hover{transform:translateY(-5px);background:#e1e8dc}
-    .support-card .number{font-size:.65rem;letter-spacing:.15em;color:var(--terra);font-weight:700}
-    .support-card h3{font:500 1.85rem/1.05 var(--serif);color:var(--forest);margin:31px 0 12px}
-    .support-card p{font-size:.81rem;color:#69736b;margin:0}
-    .support-note{margin-top:22px;padding:19px 23px;background:#eee9df;border-left:3px solid var(--terra);font-size:.76rem;color:#667168}
-    .support-note strong{color:var(--forest)}
-    /* Approach: full image band with rounded organic image edge */
-    .approach{background:var(--forest);color:var(--cream);padding:0;overflow:hidden}
-    .approach-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:660px}
-    .approach-image{min-height:600px;background:url("assets/forest-light-detail.jpg") center/cover no-repeat;border-radius:0 0 150px 0;position:relative}
-    .approach-image:after{content:"";position:absolute;inset:20px 20px 20px 0;border:1px solid rgba(255,255,255,.45);border-radius:0 0 130px 0}
-    .approach-copy{padding:95px clamp(40px,7vw,105px);align-self:center}
-    .approach-copy .eyebrow{color:#d8a17e;margin-bottom:22px}
-    .approach-copy h2{color:var(--cream);margin-bottom:25px}
-    .approach-copy p{color:rgba(244,240,231,.78);font-size:.9rem}
-    .quote{font:italic 1.6rem/1.35 var(--serif);color:#e5c4a9;border-left:1px solid var(--terra);padding-left:22px;margin:30px 0}
-    .about{background:var(--sage-light)}
-    .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:85px;align-items:center}
-    .about-image{min-height:570px;background:url("assets/forest-waterfall-hero.jpg") 65% center/cover;border-radius:2px 110px 2px 2px;position:relative}
-    .about-image:after{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.65);border-radius:2px 95px 2px 2px}
-    .about-copy .eyebrow{margin-bottom:20px;color:var(--forest-2)}
-    .about-copy h2{margin-bottom:22px}
-    .about-copy p{color:#59675d;font-size:.9rem}
-    .facts{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 30px}
-    .fact{padding:9px 13px;border:1px solid rgba(24,63,53,.25);border-radius:30px;color:var(--forest);font-size:.68rem}
-    .fees{background:var(--cream)}
-    .fees-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .fee-panel{padding:42px;background:var(--paper);border-radius:2px 55px 2px 2px}
-    .fee-panel.dark{background:#dfe6da}
-    .fee-panel .eyebrow{color:var(--terra-dark)}
-    .fee-price{font:400 clamp(3.6rem,6vw,5.5rem)/1 var(--serif);color:var(--forest);margin:12px 0 17px}
-    .fee-panel p,.fee-panel li{font-size:.83rem;color:#657168}
-    .fee-panel ul{padding-left:19px}
-    .fee-small{border-top:1px solid var(--line);padding-top:18px;margin-top:23px;font-size:.7rem!important}
-    .availability{background:#e8ede4}
-    .availability-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
-    .availability h2{margin:17px 0 22px}
-    .availability p{color:var(--muted);font-size:.88rem}
-    .hours{border-top:1px solid var(--line)}
-    .hour-row{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-size:.86rem}
-    .hour-row strong{color:var(--forest)}
-    .hour-row span:last-child{text-align:right;color:var(--muted)}
-    .faq{background:var(--paper)}
-    .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:85px}
-    .faq-intro h2{margin:18px 0}
-    .faq-intro p{color:var(--muted);font-size:.88rem}
-    .faq-list{border-top:1px solid var(--line)}
-    details{border-bottom:1px solid var(--line);padding:21px 0}
-    summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;color:var(--forest);font:500 1.45rem var(--serif)}
-    summary::-webkit-details-marker{display:none}
-    summary:after{content:"＋";font:400 1rem var(--sans);color:var(--terra)}
-    details[open] summary:after{content:"−"}
-    details p{font-size:.82rem;color:var(--muted);max-width:720px;margin:14px 0 0}
-    .contact{background:#f0e7db;position:relative;overflow:hidden}
-    .contact:after{content:"";position:absolute;width:440px;height:440px;border:1px solid rgba(189,112,77,.18);border-radius:50%;right:-190px;top:-190px;box-shadow:0 0 0 35px rgba(189,112,77,.035),0 0 0 70px rgba(189,112,77,.025);pointer-events:none}
-    .contact-grid{position:relative;z-index:1;display:grid;grid-template-columns:.85fr 1.15fr;gap:75px}
-    .contact-copy h2{margin:18px 0 22px}
-    .contact-copy p{color:#647067;font-size:.9rem}
-    .contact-details{display:grid;gap:17px;margin-top:32px}
-    .contact-detail span{display:block;font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-dark);font-weight:700}
-    .contact-detail strong{font-weight:500;color:var(--forest)}
-    .contact-form{background:var(--paper);padding:38px;border-radius:2px 55px 2px 2px;box-shadow:0 18px 55px rgba(53,63,51,.07)}
-    .contact-form h3{font:500 2.2rem var(--serif);color:var(--forest);margin:0 0 6px}
-    .contact-form>p{font-size:.79rem;color:var(--muted);margin-bottom:22px}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}
-    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
-    .field.full{grid-column:1/-1}
-    label{font-size:.68rem;font-weight:700;color:var(--forest)}
-    input,select,textarea{width:100%;border:1px solid rgba(24,63,53,.2);background:#fffefa;padding:12px 13px;color:var(--ink);outline:none;border-radius:2px}
-    input:focus,select:focus,textarea:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(130,148,124,.15)}
-    textarea{min-height:100px;resize:vertical}
-    .consent{display:flex;align-items:flex-start;gap:9px;font-size:.68rem;color:var(--muted);margin:6px 0 18px}
-    .consent input{width:auto;margin-top:4px}
-    .form-disclaimer{font-size:.66rem!important;line-height:1.55;margin:15px 0 0!important}
-    .emergency{background:#e6e0d3;padding:18px 0;color:#647067;font-size:.74rem}
-    .emergency strong{color:var(--forest)}
-    .footer{background:#15382f;color:rgba(244,240,231,.75);padding:48px 0 24px}
-    .footer-top{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.16)}
-    .footer .brand img{width:175px}
-    .footer-links{display:flex;flex-wrap:wrap;gap:22px}
-    .footer-links a{font-size:.63rem;letter-spacing:.12em;text-transform:uppercase}
-    .footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;font-size:.66rem}
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.visible{opacity:1;transform:none}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}.reveal{opacity:1;transform:none}}
-    @media(max-width:900px){
-      .wrap{width:min(var(--max),calc(100% - 40px))}
-      .nav-links{gap:14px}.nav-links a{font-size:.57rem}
-      .intro-grid,.about-grid,.availability-grid,.faq-grid,.contact-grid{gap:45px}
-      .approach-copy{padding:65px 42px}
-      .support-grid{grid-template-columns:repeat(2,1fr)}
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 30px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.7;
     }
-    @media(max-width:680px){
-      .wrap{width:calc(100% - 34px)}
-      .site-nav{top:12px}.nav-inner{min-height:68px;padding:8px 12px;border-radius:3px}
-      .brand img{width:145px;max-height:54px}
-      .menu-toggle{display:block}
-      .nav-cta{display:none}
-      .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:var(--paper);padding:22px;border-radius:3px;box-shadow:0 15px 35px rgba(10,35,27,.12);align-items:flex-start;flex-direction:column;gap:18px}
-      .nav-links.open{display:flex}.nav-links a{font-size:.68rem}
-      .hero{min-height:820px;min-height:95svh;align-items:flex-end}
-      .hero:before{background-position:58% center}
-      .hero:after{background:linear-gradient(0deg,rgba(12,38,29,.3),transparent 75%)}
-      .hero-content{padding-top:130px;padding-bottom:55px}
-      .hero-card{padding:32px 25px 30px;border-top-right-radius:42px}
-      .hero h1{font-size:clamp(3.7rem,16vw,5.6rem)}
-      .hero-intro{font-size:.88rem}
-      .hero-actions{align-items:flex-start;flex-direction:column;gap:18px}
-      .hero-note{right:18px;bottom:15px;font-size:.55rem}
-      .intro,.section{padding:78px 0}
-      .intro-grid,.about-grid,.availability-grid,.faq-grid,.contact-grid,.fees-grid,.section-top{grid-template-columns:1fr;gap:30px}
-      .intro-aside{display:flex;align-items:center;gap:18px}.round-mark{width:58px;height:58px;flex:0 0 58px;margin:0}.intro-aside p{margin:0;max-width:250px;font-size:1.15rem}
-      .section-top{margin-bottom:32px}
-      .support-grid{grid-template-columns:1fr;gap:11px}
-      .support-card{min-height:0;padding:25px;border-top-right-radius:35px}
-      .support-card h3{margin:20px 0 9px}
-      .approach-grid{grid-template-columns:1fr}
-      .approach-image{min-height:360px;border-radius:0 0 90px 0}
-      .approach-copy{padding:60px 25px 70px}
-      .about-image{min-height:380px;border-top-right-radius:80px}
-      .fee-panel{padding:30px 25px}
-      .hour-row{font-size:.78rem}
-      .contact-form{padding:27px 20px;border-top-right-radius:40px}
-      .form-grid{grid-template-columns:1fr}
-      .field.full{grid-column:auto}
-      .footer-top,.footer-bottom{align-items:flex-start;flex-direction:column}
-      .footer-links{gap:14px}
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--max), calc(100% - 56px)); margin: auto; }
+    .eyebrow {
+      font-size: .68rem;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--sage);
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h2 {
+      font: 400 clamp(2.8rem, 5vw, 4.9rem)/.98 var(--serif);
+      letter-spacing: -.025em;
+      color: var(--forest);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      background: var(--terra);
+      color: white;
+      padding: 15px 23px;
+      border-radius: 3px;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: .25s;
+    }
+    .btn:hover { background: var(--terra-dark); transform: translateY(-2px); }
+    .btn-forest { background: var(--forest); }
+    .btn-forest:hover { background: var(--forest-2); }
+    .underlink {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 5px;
+      font-size: .7rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* Floating navigation */
+    .site-nav { position: absolute; z-index: 10; top: 22px; left: 0; right: 0; }
+    .nav-inner {
+      min-height: 82px;
+      padding: 10px 22px 10px 18px;
+      border-radius: 5px;
+      background: rgba(250, 248, 241, .95);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      box-shadow: 0 10px 40px rgba(10, 35, 27, .08);
+    }
+    .brand { display: inline-flex; align-items: center; flex-shrink: 0; }
+    .brand img { width: 188px; height: auto; max-height: 68px; object-fit: contain; }
+    .nav-links { display: flex; align-items: center; gap: 27px; }
+    .nav-links a {
+      font-size: .64rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      color: var(--forest);
+      font-weight: 700;
+    }
+    .nav-links a:hover { color: var(--terra); }
+    .nav-cta {
+      border: 1px solid var(--forest);
+      padding: 11px 16px;
+      font-size: .63rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      color: var(--forest);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--forest); color: white; }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+      color: var(--forest);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 790px;
+      min-height: min(900px, 100svh);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #294b3e;
+    }
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("assets/forest-waterfall-hero.jpg") center 48% / cover no-repeat;
+      transform: scale(1.02);
+    }
+    .hero:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(13, 42, 32, .13), rgba(13, 42, 32, .03) 60%),
+        linear-gradient(0deg, rgba(10, 33, 25, .28), transparent 45%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding-top: 110px;
+      padding-bottom: 65px;
+    }
+    .hero-card {
+      max-width: 720px;
+      padding: 46px 48px 43px;
+      background: rgba(248, 245, 236, .94);
+      backdrop-filter: blur(8px);
+      border-radius: 2px 65px 2px 2px;
+      box-shadow: 0 25px 80px rgba(7, 25, 18, .15);
+    }
+    .hero-card .eyebrow { color: var(--terra-dark); margin-bottom: 20px; }
+    .hero h1 {
+      font: 400 clamp(4rem, 7vw, 7rem)/.83 var(--serif);
+      letter-spacing: -.045em;
+      color: var(--forest);
+      margin: 0 0 24px;
+    }
+    .hero h1 em { color: var(--sage); font-weight: 400; }
+    .hero-intro {
+      max-width: 530px;
+      color: #536057;
+      font-size: .96rem;
+      line-height: 1.85;
+      margin-bottom: 0;
+    }
+
+    /* Five clear hero actions */
+    .hero-actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 30px;
+      width: 100%;
+    }
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 56px;
+      padding: 11px 9px;
+      background: var(--terra);
+      color: #fff;
+      border: 1px solid var(--terra);
+      border-radius: 2px;
+      font-size: .62rem;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 1.45;
+      transition: all .25s ease;
+    }
+    .hero-cta:hover {
+      background: var(--forest);
+      border-color: var(--forest);
+      transform: translateY(-3px);
+    }
+    .hero-cta.booking {
+      background: var(--forest);
+      border-color: var(--forest);
+    }
+    .hero-cta.booking:hover {
+      background: var(--terra);
+      border-color: var(--terra);
+    }
+    .hero-note {
+      position: absolute;
+      z-index: 2;
+      right: max(28px, calc((100vw - var(--max)) / 2));
+      bottom: 30px;
+      color: #fff;
+      font-size: .65rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      text-shadow: 0 1px 8px #173d32;
+    }
+    .hero-note:before {
+      content: "";
+      display: inline-block;
+      width: 35px;
+      height: 1px;
+      background: #fff;
+      vertical-align: middle;
+      margin-right: 12px;
+    }
+
+    /* Intro */
+    .intro { background: var(--cream); padding: 112px 0 120px; }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 90px;
+      align-items: start;
+    }
+    .intro-aside { padding-top: 10px; }
+    .round-mark {
+      width: 78px;
+      height: 78px;
+      border: 1px solid rgba(24, 63, 53, .3);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--terra);
+      font: italic 2.3rem var(--serif);
+      margin: 0 0 25px;
+    }
+    .intro-aside p { max-width: 230px; color: var(--muted); font: italic 1.35rem/1.35 var(--serif); }
+    .intro h2 { max-width: 780px; margin-bottom: 25px; }
+    .intro h2 em { color: var(--terra); font-weight: 400; }
+    .intro-copy { max-width: 720px; color: #5c675f; font-size: .94rem; }
+    .intro-copy p { margin-bottom: 15px; }
+
+    .section { padding: 112px 0; }
+    .section-top {
+      display: grid;
+      grid-template-columns: 1fr .65fr;
+      gap: 50px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+    .section-top .eyebrow { margin-bottom: 17px; }
+    .section-top h2 { max-width: 680px; margin: 0; }
+    .section-top p { color: var(--muted); font-size: .88rem; max-width: 350px; margin: 0; }
+
+    /* Support cards */
+    .support { background: var(--paper); }
+    .support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .support-card {
+      position: relative;
+      min-height: 255px;
+      padding: 29px 28px 27px;
+      background: var(--cream);
+      border-radius: 2px 42px 2px 2px;
+      transition: transform .25s, background .25s;
+    }
+    .support-card:nth-child(2), .support-card:nth-child(5) { background: #e8ede4; }
+    .support-card:nth-child(3), .support-card:nth-child(6) { background: #f0e7db; }
+    .support-card:hover { transform: translateY(-5px); background: #e1e8dc; }
+    .support-card .number { font-size: .65rem; letter-spacing: .15em; color: var(--terra); font-weight: 700; }
+    .support-card h3 { font: 500 1.85rem/1.05 var(--serif); color: var(--forest); margin: 31px 0 12px; }
+    .support-card p { font-size: .81rem; color: #69736b; margin: 0; }
+    .support-note {
+      margin-top: 22px;
+      padding: 19px 23px;
+      background: #eee9df;
+      border-left: 3px solid var(--terra);
+      font-size: .76rem;
+      color: #667168;
+    }
+    .support-note strong { color: var(--forest); }
+
+    /* Approach - text-led section, no image */
+    .approach {
+      background: var(--forest);
+      color: var(--cream);
+      padding: 105px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .approach:before {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgba(244, 240, 231, .12);
+      border-radius: 50%;
+      right: -170px;
+      top: -210px;
+      box-shadow: 0 0 0 35px rgba(244, 240, 231, .025), 0 0 0 75px rgba(244, 240, 231, .02);
+      pointer-events: none;
+    }
+    .approach-inner { max-width: 850px; position: relative; z-index: 1; }
+    .approach-copy .eyebrow { color: #d8a17e; margin-bottom: 22px; }
+    .approach-copy h2 { color: var(--cream); margin-bottom: 25px; max-width: 760px; }
+    .approach-copy p { color: rgba(244, 240, 231, .78); font-size: .94rem; max-width: 740px; }
+    .quote {
+      font: italic 1.65rem/1.4 var(--serif);
+      color: #e5c4a9;
+      border-left: 1px solid var(--terra);
+      padding-left: 24px;
+      margin: 32px 0;
+      max-width: 760px;
+    }
+
+    /* About - editorial text layout, no image */
+    .about { background: var(--sage-light); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 85px;
+      align-items: start;
+    }
+    .about-aside {
+      min-height: 280px;
+      padding: 35px;
+      background: rgba(251, 249, 244, .55);
+      border-radius: 2px 90px 2px 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .about-aside-mark {
+      color: var(--terra);
+      font: italic 5rem/.9 var(--serif);
+    }
+    .about-aside p {
+      color: var(--forest);
+      font: italic 1.45rem/1.3 var(--serif);
+      max-width: 260px;
+      margin: 35px 0 0;
+    }
+    .about-copy .eyebrow { margin-bottom: 20px; color: var(--forest-2); }
+    .about-copy h2 { margin-bottom: 22px; }
+    .about-copy p { color: #59675d; font-size: .9rem; }
+    .facts { display: flex; flex-wrap: wrap; gap: 9px; margin: 26px 0 30px; }
+    .fact {
+      padding: 9px 13px;
+      border: 1px solid rgba(24, 63, 53, .25);
+      border-radius: 30px;
+      color: var(--forest);
+      font-size: .68rem;
+    }
+
+    /* Fees */
+    .fees { background: var(--cream); }
+    .fees-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .fee-panel { padding: 42px; background: var(--paper); border-radius: 2px 55px 2px 2px; }
+    .fee-panel.dark { background: #dfe6da; }
+    .fee-panel .eyebrow { color: var(--terra-dark); }
+    .fee-price { font: 400 clamp(3.6rem, 6vw, 5.5rem)/1 var(--serif); color: var(--forest); margin: 12px 0 17px; }
+    .fee-panel p, .fee-panel li { font-size: .83rem; color: #657168; }
+    .fee-panel ul { padding-left: 19px; }
+    .fee-small { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 23px; font-size: .7rem !important; }
+
+    /* Appointment hours */
+    .availability { background: #e8ede4; }
+    .availability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+    .availability h2 { margin: 17px 0 22px; }
+    .availability p { color: var(--muted); font-size: .88rem; }
+    .hours { border-top: 1px solid var(--line); }
+    .hour-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .86rem;
+    }
+    .hour-row strong { color: var(--forest); }
+    .hour-row span:last-child { text-align: right; color: var(--muted); }
+
+    /* FAQs */
+    .faq { background: var(--paper); }
+    .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 85px; }
+    .faq-intro h2 { margin: 18px 0; }
+    .faq-intro p { color: var(--muted); font-size: .88rem; }
+    .faq-list { border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); padding: 21px 0; }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--forest);
+      font: 500 1.45rem var(--serif);
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary:after { content: "＋"; font: 400 1rem var(--sans); color: var(--terra); }
+    details[open] summary:after { content: "−"; }
+    details p { font-size: .82rem; color: var(--muted); max-width: 720px; margin: 14px 0 0; }
+
+    /* Contact */
+    .contact { background: #f0e7db; position: relative; overflow: hidden; }
+    .contact:after {
+      content: "";
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border: 1px solid rgba(189, 112, 77, .18);
+      border-radius: 50%;
+      right: -190px;
+      top: -190px;
+      box-shadow: 0 0 0 35px rgba(189, 112, 77, .035), 0 0 0 70px rgba(189, 112, 77, .025);
+      pointer-events: none;
+    }
+    .contact-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .85fr 1.15fr; gap: 75px; }
+    .contact-copy h2 { margin: 18px 0 22px; }
+    .contact-copy p { color: #647067; font-size: .9rem; }
+    .contact-details { display: grid; gap: 17px; margin-top: 32px; }
+    .contact-detail span {
+      display: block;
+      font-size: .63rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--terra-dark);
+      font-weight: 700;
+    }
+    .contact-detail strong { font-weight: 500; color: var(--forest); }
+    .contact-form {
+      background: var(--paper);
+      padding: 38px;
+      border-radius: 2px 55px 2px 2px;
+      box-shadow: 0 18px 55px rgba(53, 63, 51, .07);
+    }
+    .contact-form h3 { font: 500 2.2rem var(--serif); color: var(--forest); margin: 0 0 6px; }
+    .contact-form > p { font-size: .79rem; color: var(--muted); margin-bottom: 22px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 15px; }
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: .68rem; font-weight: 700; color: var(--forest); }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(24, 63, 53, .2);
+      background: #fffefa;
+      padding: 12px 13px;
+      color: var(--ink);
+      outline: none;
+      border-radius: 2px;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(130, 148, 124, .15);
+    }
+    textarea { min-height: 100px; resize: vertical; }
+    .consent { display: flex; align-items: flex-start; gap: 9px; font-size: .68rem; color: var(--muted); margin: 6px 0 18px; }
+    .consent input { width: auto; margin-top: 4px; }
+    .form-disclaimer { font-size: .66rem !important; line-height: 1.55; margin: 15px 0 0 !important; }
+
+    .emergency { background: #e6e0d3; padding: 18px 0; color: #647067; font-size: .74rem; }
+    .emergency strong { color: var(--forest); }
+
+    /* Footer */
+    .footer { background: #15382f; color: rgba(244, 240, 231, .75); padding: 48px 0 24px; }
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, .16);
+    }
+    .footer .brand img { width: 175px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
+    .footer-links a { font-size: .63rem; letter-spacing: .12em; text-transform: uppercase; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; font-size: .66rem; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 900px) {
+      .wrap { width: min(var(--max), calc(100% - 40px)); }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: .57rem; }
+      .intro-grid, .about-grid, .availability-grid, .faq-grid, .contact-grid { gap: 45px; }
+      .support-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-card { max-width: 690px; }
+    }
+
+    @media (max-width: 680px) {
+      .wrap { width: calc(100% - 34px); }
+      .site-nav { top: 12px; }
+      .nav-inner { min-height: 68px; padding: 8px 12px; border-radius: 3px; }
+      .brand img { width: 145px; max-height: 54px; }
+      .menu-toggle { display: block; }
+      .nav-cta { display: none; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--paper);
+        padding: 22px;
+        border-radius: 3px;
+        box-shadow: 0 15px 35px rgba(10, 35, 27, .12);
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: .68rem; }
+      .hero { min-height: 850px; min-height: 100svh; align-items: flex-end; }
+      .hero:before { background-position: 58% center; }
+      .hero:after { background: linear-gradient(0deg, rgba(12, 38, 29, .35), transparent 78%); }
+      .hero-content { padding-top: 120px; padding-bottom: 55px; }
+      .hero-card { padding: 32px 24px 28px; border-top-right-radius: 42px; }
+      .hero h1 { font-size: clamp(3.55rem, 15vw, 5.3rem); }
+      .hero-intro { font-size: .87rem; }
+      .hero-actions { grid-template-columns: repeat(2, 1fr); gap: 9px; margin-top: 25px; }
+      .hero-cta { min-height: 52px; font-size: .57rem; padding: 9px 6px; }
+      .hero-cta:last-child { grid-column: 1 / -1; }
+      .hero-note { right: 18px; bottom: 13px; font-size: .52rem; }
+      .intro, .section { padding: 78px 0; }
+      .intro-grid, .about-grid, .availability-grid, .faq-grid, .contact-grid, .fees-grid, .section-top { grid-template-columns: 1fr; gap: 30px; }
+      .intro-aside { display: flex; align-items: center; gap: 18px; }
+      .round-mark { width: 58px; height: 58px; flex: 0 0 58px; margin: 0; }
+      .intro-aside p { margin: 0; max-width: 250px; font-size: 1.15rem; }
+      .section-top { margin-bottom: 32px; }
+      .support-grid { grid-template-columns: 1fr; gap: 11px; }
+      .support-card { min-height: 0; padding: 25px; border-top-right-radius: 35px; }
+      .support-card h3 { margin: 20px 0 9px; }
+      .approach { padding: 76px 0; }
+      .approach-copy h2 { font-size: clamp(2.8rem, 12vw, 4rem); }
+      .quote { font-size: 1.4rem; }
+      .about-aside { min-height: 210px; padding: 26px; border-top-right-radius: 65px; }
+      .about-aside-mark { font-size: 4rem; }
+      .fee-panel { padding: 30px 25px; }
+      .hour-row { font-size: .78rem; }
+      .contact-form { padding: 27px 20px; border-top-right-radius: 40px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .footer-top, .footer-bottom { align-items: flex-start; flex-direction: column; }
+      .footer-links { gap: 14px; }
     }
   </style>
 </head>
+
 <body>
   <header class="hero" id="home">
     <nav class="site-nav" aria-label="Main navigation">
       <div class="wrap nav-inner">
-        <a class="brand" href="#home" aria-label="Still Waters Wellbeing home"><img src="assets/still-waters-logo-forest.png" alt="Still Waters Wellbeing"></a>
+        <a class="brand" href="#home" aria-label="Still Waters Wellbeing home">
+          <img src="assets/still-waters-logo-forest.png" alt="Still Waters Wellbeing">
+        </a>
+
         <div class="nav-links" id="navLinks">
-          <a href="#about">About</a><a href="#support">How we can help</a><a href="#approach">Our approach</a><a href="#fees">Fees</a><a href="#faqs">FAQs</a>
+          <a href="#about">About</a>
+          <a href="#support">How we can help</a>
+          <a href="#approach">Our approach</a>
+          <a href="#fees">Fees</a>
+          <a href="#faqs">FAQs</a>
         </div>
+
         <a class="nav-cta" href="#contact">Make an enquiry ↗</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">Menu</button>
       </div>
     </nav>
+
     <div class="wrap hero-content">
       <div class="hero-card">
         <div class="eyebrow">Still Waters Wellbeing · Mornington Peninsula</div>
         <h1>Find your way<br>back to <em>stillness.</em></h1>
-        <p class="hero-intro">When life feels heavy, you deserve a space where you can pause, feel heard and begin to find your way forward. Compassionate, evidence-based psychological support for adults.</p>
-        <div class="hero-actions"><a class="btn" href="#contact">Take the first step <span>↗</span></a><a class="underlink" href="#about">Discover Still Waters <span>→</span></a></div>
+        <p class="hero-intro">
+          When life feels heavy, you deserve a space where you can pause, feel heard and begin to find your way forward. Compassionate, evidence-based psychological support for adults.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#support" class="hero-cta">Issues We Treat ↗</a>
+          <a href="#contact" class="hero-cta">Get in Touch ↗</a>
+          <a href="#fees" class="hero-cta">Fees / Rebates ↗</a>
+
+          <!-- Replace the placeholder below with Michelle's verified online booking URL. -->
+          <a href="YOUR-ONLINE-BOOKING-URL" target="_blank" rel="noopener noreferrer" class="hero-cta booking">
+            Book Online ↗
+          </a>
+
+          <a href="tel:0403002436" class="hero-cta booking">Book by Phone ☎</a>
+        </div>
       </div>
     </div>
+
     <div class="hero-note">A space to pause · A space to grow</div>
   </header>
 
   <main>
     <section class="intro">
       <div class="wrap intro-grid">
-        <aside class="intro-aside reveal"><div class="round-mark">sw</div><p>The garden of life has seasons. You don't have to navigate every one alone.</p></aside>
+        <aside class="intro-aside reveal">
+          <div class="round-mark">sw</div>
+          <p>The garden of life has seasons. You don't have to navigate every one alone.</p>
+        </aside>
+
         <div class="reveal">
           <div class="eyebrow">A gentle place to begin</div>
           <h2>When everything feels like too much, <em>you deserve to be heard.</em></h2>
@@ -246,62 +651,87 @@
 
     <section class="section support" id="support">
       <div class="wrap">
-        <div class="section-top reveal"><div><div class="eyebrow">How we can help</div><h2>Support for the things that feel difficult.</h2></div><p>Everyone arrives with a different story. Support is shaped around your experiences, needs and goals.</p></div>
-        <div class="support-grid">
-          <article class="support-card reveal"><span class="number">01 / ANXIETY & MOOD</span><h3>Anxiety & mood concerns</h3><p>Panic attacks, social anxiety, generalised anxiety, obsessive-compulsive difficulties and depression.</p></article>
-          <article class="support-card reveal"><span class="number">02 / RELATIONSHIPS</span><h3>Relationships</h3><p>Spouse and partner conflict, affairs, family and parenting relationships, and work-related relationships.</p></article>
-          <article class="support-card reveal"><span class="number">03 / TRAUMA</span><h3>Trauma & recovery</h3><p>Support relating to bullying, past physical or sexual assault, accidents, childhood and family-of-origin experiences, PTSD and complex trauma. Support is not offered for current or ongoing domestic violence.</p></article>
-          <article class="support-card reveal"><span class="number">04 / EMOTIONAL WELLBEING</span><h3>Emotional regulation</h3><p>Anger management and developing ways to understand and regulate difficult emotions.</p></article>
-          <article class="support-card reveal"><span class="number">05 / LIFE & WORK</span><h3>Work-related concerns</h3><p>Psychological support for challenges and stressors connected with work and life transitions.</p></article>
-          <article class="support-card reveal"><span class="number">06 / PERSONAL GROWTH</span><h3>Confidence & boundaries</h3><p>Grief and loss, chronic insomnia, confidence, assertiveness, people-pleasing, guilt, communication and boundary setting.</p></article>
+        <div class="section-top reveal">
+          <div>
+            <div class="eyebrow">How we can help</div>
+            <h2>Support for the things that feel difficult.</h2>
+          </div>
+          <p>Everyone arrives with a different story. Support is shaped around your experiences, needs and goals.</p>
         </div>
-        <div class="support-note reveal"><strong>Areas outside the practice's scope:</strong> Eating disorders, current psychosis and current or ongoing domestic violence. The practice does not provide medico-legal reports, TAC or WorkCover services, or NDIS assessments or consultations. Please contact the practice to discuss whether your needs are within scope.</div>
+
+        <div class="support-grid">
+          <article class="support-card reveal">
+            <span class="number">01 / ANXIETY &amp; MOOD</span>
+            <h3>Anxiety &amp; mood concerns</h3>
+            <p>Panic attacks, social anxiety, generalised anxiety, obsessive-compulsive difficulties and depression.</p>
+          </article>
+
+          <article class="support-card reveal">
+            <span class="number">02 / RELATIONSHIPS</span>
+            <h3>Relationships</h3>
+            <p>Spouse and partner conflict, affairs, family and parenting relationships, and work-related relationships.</p>
+          </article>
+
+          <article class="support-card reveal">
+            <span class="number">03 / TRAUMA</span>
+            <h3>Trauma &amp; recovery</h3>
+            <p>Support relating to bullying, past physical or sexual assault, accidents, childhood and family-of-origin experiences, PTSD and complex trauma. Support is not offered for current or ongoing domestic violence.</p>
+          </article>
+
+          <article class="support-card reveal">
+            <span class="number">04 / EMOTIONAL WELLBEING</span>
+            <h3>Emotional regulation</h3>
+            <p>Anger management and developing ways to understand and regulate difficult emotions.</p>
+          </article>
+
+          <article class="support-card reveal">
+            <span class="number">05 / LIFE &amp; WORK</span>
+            <h3>Work-related concerns</h3>
+            <p>Psychological support for challenges and stressors connected with work and life transitions.</p>
+          </article>
+
+          <article class="support-card reveal">
+            <span class="number">06 / PERSONAL GROWTH</span>
+            <h3>Confidence &amp; boundaries</h3>
+            <p>Grief and loss, chronic insomnia, confidence, assertiveness, people-pleasing, guilt, communication and boundary setting.</p>
+          </article>
+        </div>
+
+        <div class="support-note reveal">
+          <strong>Areas outside the practice's scope:</strong> Eating disorders, current psychosis and current or ongoing domestic violence. The practice does not provide medico-legal reports, TAC or WorkCover services, or NDIS assessments or consultations. Please contact the practice to discuss whether your needs are within scope.
+        </div>
       </div>
     </section>
 
-    
-<section class="approach" id="approach">
-  <div class="approach-grid">
-
-    <div class="approach-copy reveal">
-      <div class="eyebrow">Our approach · A space to grow</div>
-
-      <h2>
-        Meaningful support,
-        grounded in understanding.
-      </h2>
-
-      <p>
-        Our approach is evidence-based, trauma-informed and relational,
-        with a focus on meaningful growth and resilience. Therapy offers
-        an opportunity to explore your experiences, develop understanding
-        and build skills that support change.
-      </p>
-
-      <div class="quote">
-        “When you are ready, I invite you to reach out.
-        Together, we can work towards resilience, understanding,
-        emotional freedom, growth and wellbeing.”
+    <section class="approach" id="approach">
+      <div class="wrap approach-inner">
+        <div class="approach-copy reveal">
+          <div class="eyebrow">Our approach</div>
+          <h2>Meaningful support, grounded in understanding.</h2>
+          <p>Our approach is evidence-based, trauma-informed and relational, with a focus on meaningful growth and resilience. Therapy offers an opportunity to explore your experiences, develop understanding and build skills that support change.</p>
+          <div class="quote">“When you are ready, I invite you to reach out. Together, we can work towards resilience, understanding, emotional freedom, growth and wellbeing.”</div>
+          <p>There is no expectation to have everything worked out before you begin. The first step can simply be a conversation.</p>
+        </div>
       </div>
-
-      <p>
-        There is no expectation to have everything worked out before
-        you begin. The first step can simply be a conversation.
-      </p>
-
-    </div>
-  </div>
-</section>
+    </section>
 
     <section class="section about" id="about">
       <div class="wrap about-grid">
-        <div class="about-image reveal" role="img" aria-label="Sunlit green forest and waterfall"></div>
+        <aside class="about-aside reveal" aria-label="A note about Still Waters Wellbeing">
+          <span class="about-aside-mark">sw.</span>
+          <p>A thoughtful space to pause, reflect and find a way forward.</p>
+        </aside>
+
         <div class="about-copy reveal">
           <div class="eyebrow">A little about your psychologist</div>
           <h2>Meet Michelle Wong.</h2>
           <p>Still Waters Wellbeing is managed by Clinical Psychologist Michelle Wong, who brings over 20 years of experience working in mental health.</p>
           <p>Michelle is compassionate and experienced in working with a range of psychological and mental health concerns. She welcomes adults seeking a thoughtful, confidential and collaborative space to work through life's challenges.</p>
-          <div class="facts"><span class="fact">20+ years' experience</span><span class="fact">Evidence-based care</span><span class="fact">Trauma-informed approach</span></div>
+          <div class="facts">
+            <span class="fact">20+ years' experience</span>
+            <span class="fact">Evidence-based care</span>
+            <span class="fact">Trauma-informed approach</span>
+          </div>
           <a class="underlink" href="#contact">Make an enquiry <span>→</span></a>
         </div>
       </div>
@@ -309,56 +739,173 @@
 
     <section class="section fees" id="fees">
       <div class="wrap">
-        <div class="section-top reveal"><div><div class="eyebrow">Fees & rebates</div><h2>Clear information before you begin.</h2></div><p>We want you to understand the practical details of accessing support before your first appointment.</p></div>
+        <div class="section-top reveal">
+          <div>
+            <div class="eyebrow">Fees &amp; rebates</div>
+            <h2>Clear information before you begin.</h2>
+          </div>
+          <p>We want you to understand the practical details of accessing support before your first appointment.</p>
+        </div>
+
         <div class="fees-grid">
-          <div class="fee-panel reveal"><div class="eyebrow">Standard consultation</div><div class="fee-price">$249</div><p>Standard consultation fee listed in the practice's supplied information for private and Medicare-referred appointments.</p><ul><li>Payment is due on the day of service.</li><li>Accepted payment methods listed: EFTPOS, Visa and cash.</li><li>Private health insurance may cover part of the fee, depending on your level of cover.</li></ul><p class="fee-small"></p></div>
-          <div class="fee-panel dark reveal"><div class="eyebrow">Medicare rebates</div><div class="fee-price">$149.05*</div><p>The supplied material states that a valid Mental Health Treatment Plan and GP referral may provide access to up to 10 Medicare-rebated sessions per calendar year.</p><p>The document lists an indicative gap of approximately $90 for a 50-minute Clinical Psychologist session.</p><p class="fee-small"></p></div>
+          <div class="fee-panel reveal">
+            <div class="eyebrow">Standard consultation</div>
+            <div class="fee-price">$249</div>
+            <p>Standard consultation fee listed in the practice's supplied information for private and Medicare-referred appointments.</p>
+            <ul>
+              <li>Payment is due on the day of service.</li>
+              <li>Accepted payment methods listed: EFTPOS, Visa and cash.</li>
+              <li>Private health insurance may cover part of the fee, depending on your level of cover.</li>
+            </ul>
+          </div>
+
+          <div class="fee-panel dark reveal">
+            <div class="eyebrow">Medicare rebates</div>
+            <div class="fee-price">$149.05*</div>
+            <p>The supplied material states that a valid Mental Health Treatment Plan and GP referral may provide access to up to 10 Medicare-rebated sessions per calendar year.</p>
+            <p>The document lists an indicative gap of approximately $90 for a 50-minute Clinical Psychologist session.</p>
+            <p class="fee-small">*Rebate and out-of-pocket amounts should be confirmed before publication, as Medicare rates may change.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section availability">
       <div class="wrap availability-grid">
-        <div class="reveal"><div class="eyebrow">Appointments</div><h2>A little time set aside for you.</h2><p>Consultations are offered in person at the Mornington practice. In-person appointments are preferred and strongly encouraged. Phone telehealth may be available for follow-up appointments, but not for first appointments.</p><p><strong>Session duration:</strong> 50 minutes.</p></div>
-        <div class="reveal"><div class="hours">
-          <div class="hour-row"><strong>Wednesday</strong><span>12:00 pm – 6:00 pm</span></div>
-          <div class="hour-row"><strong>Thursday</strong><span>10:00 am – 6:00 pm</span></div>
-          <div class="hour-row"><strong>Friday</strong><span>10:00 am – 4:00 pm</span></div>
-        </div><p style="font-size:.72rem">These are the usual operating hours supplied by the practice and may change. Please confirm availability when making an enquiry.</p></div>
+        <div class="reveal">
+          <div class="eyebrow">Appointments</div>
+          <h2>A little time set aside for you.</h2>
+          <p>Consultations are offered in person at the Mornington practice. In-person appointments are preferred and strongly encouraged. Phone telehealth may be available for follow-up appointments, but not for first appointments.</p>
+          <p><strong>Session duration:</strong> 50 minutes.</p>
+        </div>
+
+        <div class="reveal">
+          <div class="hours">
+            <div class="hour-row"><strong>Wednesday</strong><span>12:00 pm – 6:00 pm</span></div>
+            <div class="hour-row"><strong>Thursday</strong><span>10:00 am – 6:00 pm</span></div>
+            <div class="hour-row"><strong>Friday</strong><span>10:00 am – 4:00 pm</span></div>
+          </div>
+          <p style="font-size:.72rem">These are the usual operating hours supplied by the practice and may change. Please confirm availability when making an enquiry.</p>
+        </div>
       </div>
     </section>
 
     <section class="section faq" id="faqs">
       <div class="wrap faq-grid">
-        <div class="faq-intro reveal"><div class="eyebrow">A few helpful details</div><h2>Frequently asked questions.</h2><p>A little more information about what to expect when accessing support.</p></div>
+        <div class="faq-intro reveal">
+          <div class="eyebrow">A few helpful details</div>
+          <h2>Frequently asked questions.</h2>
+          <p>A little more information about what to expect when accessing support.</p>
+        </div>
+
         <div class="faq-list reveal">
-          <details><summary>What happens before my first appointment?</summary><p>Before services commence, you will be asked to complete an online intake form. It collects contact details and relevant background information, and outlines the practice's service policies for your review and consent.</p></details>
-          <details><summary>How long are sessions?</summary><p>Sessions are 50 minutes, allowing time for therapeutic exploration and guidance tailored to your needs.</p></details>
-          <details><summary>What happens after a session?</summary><p>The supplied practice information explains that the clinician allocates an additional 10–30 minutes after sessions for administrative responsibilities, including completing session notes. For clients using a GP Mental Health Treatment Plan, periodic updates to the referring GP may also be completed to support continuity of care.</p></details>
-          <details><summary>What is the cancellation policy?</summary><p>The supplied concept document states that at least two business days' notice (Monday to Friday) is requested for changes or cancellations. It also describes a full scheduled fee for late cancellations or non-attendance. Please confirm the current policy, exact fee and how notice is calculated directly with the practice before publishing this section.</p></details>
-          <details><summary>Are phone or telehealth appointments available?</summary><p>Phone consultations may be available for follow-up appointments, but are not offered for first appointments. In-person consultations at the Mornington practice are preferred and strongly encouraged.</p></details>
-          <details><summary>Does the practice provide emergency support?</summary><p>No. Still Waters Wellbeing is not an emergency service and cannot guarantee an appointment at short notice. If you need immediate help, contact emergency services or attend your nearest hospital emergency department. Support contacts are listed below.</p></details>
+          <details>
+            <summary>What happens before my first appointment?</summary>
+            <p>Before services commence, you will be asked to complete an online intake form. It collects contact details and relevant background information, and outlines the practice's service policies for your review and consent.</p>
+          </details>
+
+          <details>
+            <summary>How long are sessions?</summary>
+            <p>Sessions are 50 minutes, allowing time for therapeutic exploration and guidance tailored to your needs.</p>
+          </details>
+
+          <details>
+            <summary>What happens after a session?</summary>
+            <p>The supplied practice information explains that the clinician allocates an additional 10–30 minutes after sessions for administrative responsibilities, including completing session notes. For clients using a GP Mental Health Treatment Plan, periodic updates to the referring GP may also be completed to support continuity of care.</p>
+          </details>
+
+          <details>
+            <summary>What is the cancellation policy?</summary>
+            <p>The supplied concept document states that at least two business days' notice (Monday to Friday) is requested for changes or cancellations. It also describes a full scheduled fee for late cancellations or non-attendance. Please confirm the current policy, exact fee and how notice is calculated directly with the practice before publishing this section.</p>
+          </details>
+
+          <details>
+            <summary>Are phone or telehealth appointments available?</summary>
+            <p>Phone consultations may be available for follow-up appointments, but are not offered for first appointments. In-person consultations at the Mornington practice are preferred and strongly encouraged.</p>
+          </details>
+
+          <details>
+            <summary>Does the practice provide emergency support?</summary>
+            <p>No. Still Waters Wellbeing is not an emergency service and cannot guarantee an appointment at short notice. If you need immediate help, contact emergency services or attend your nearest hospital emergency department. Support contacts are listed below.</p>
+          </details>
         </div>
       </div>
     </section>
 
     <section class="section contact" id="contact">
       <div class="wrap contact-grid">
-        <div class="contact-copy reveal"><div class="eyebrow">Get in touch</div><h2>Whenever you're ready, we're here to listen.</h2><p>If you have questions or would like to enquire about an appointment, you are welcome to contact Michelle directly. The supplied information says enquiries are generally answered within two business days.</p>
-          <div class="contact-details"><div class="contact-detail"><span>Phone</span><strong>0403 002 436</strong></div><div class="contact-detail"><span>Location</span><strong>Mornington, VIC 3931</strong></div><div class="contact-detail"><span>Email</span><strong>Business email to be confirmed</strong></div></div>
-        </div>
-        <form class="contact-form reveal" id="enquiryForm">
-          <h3>Start a conversation.</h3><p>Share a few details and the practice can get back to you about your enquiry.</p>
-          <div class="form-grid">
-            <div class="field"><label for="firstName">First name *</label><input id="firstName" name="firstName" required autocomplete="given-name"></div>
-            <div class="field"><label for="lastName">Last name *</label><input id="lastName" name="lastName" required autocomplete="family-name"></div>
-            <div class="field"><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
-            <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
-            <div class="field full"><label for="source">How did you hear about Still Waters?</label><select id="source" name="source"><option value="">Please select</option><option>GP / Medical professional</option><option>Friend / Word of mouth</option><option>Walked past</option><option>Google / Online</option><option>Other</option></select></div>
-            <div class="field full"><label for="reason">What would you like to enquire about?</label><textarea id="reason" name="reason" placeholder="Please keep this brief. Avoid including sensitive or detailed personal health information in this initial enquiry."></textarea></div>
-            <div class="field full"><label for="contactTime">Best day and time to contact you *</label><input id="contactTime" name="contactTime" required placeholder="e.g. Thursday afternoon"></div>
+        <div class="contact-copy reveal">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Whenever you're ready, we're here to listen.</h2>
+          <p>If you have questions or would like to enquire about an appointment, you are welcome to contact Michelle directly. The supplied information says enquiries are generally answered within two business days.</p>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span>Phone</span>
+              <strong><a href="tel:0403002436">0403 002 436</a></strong>
+            </div>
+            <div class="contact-detail">
+              <span>Location</span>
+              <strong>Mornington, VIC 3931</strong>
+            </div>
+            <div class="contact-detail">
+              <span>Email</span>
+              <strong>Business email to be confirmed</strong>
+            </div>
           </div>
-          <label class="consent"><input type="checkbox" required><span>I have read the Privacy Policy and agree to the practice using my information to respond to this enquiry. *</span></label>
+
+          <p style="margin-top:28px">
+            <a href="tel:0403002436" class="btn btn-forest">Call to enquire ↗</a>
+          </p>
+        </div>
+
+        <form class="contact-form reveal" id="enquiryForm">
+          <h3>Start a conversation.</h3>
+          <p>Share a few details and the practice can get back to you about your enquiry.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="firstName">First name *</label>
+              <input id="firstName" name="firstName" required autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="lastName">Last name *</label>
+              <input id="lastName" name="lastName" required autocomplete="family-name">
+            </div>
+            <div class="field">
+              <label for="phone">Phone *</label>
+              <input id="phone" name="phone" type="tel" required autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field full">
+              <label for="source">How did you hear about Still Waters?</label>
+              <select id="source" name="source">
+                <option value="">Please select</option>
+                <option>GP / Medical professional</option>
+                <option>Friend / Word of mouth</option>
+                <option>Walked past</option>
+                <option>Google / Online</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="reason">What would you like to enquire about?</label>
+              <textarea id="reason" name="reason" placeholder="Please keep this brief. Avoid including sensitive or detailed personal health information in this initial enquiry."></textarea>
+            </div>
+            <div class="field full">
+              <label for="contactTime">Best day and time to contact you *</label>
+              <input id="contactTime" name="contactTime" required placeholder="e.g. Thursday afternoon">
+            </div>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" required>
+            <span>I have read the Privacy Policy and agree to the practice using my information to respond to this enquiry. *</span>
+          </label>
+
           <button class="btn btn-forest" type="submit">Send enquiry ↗</button>
           <p class="form-disclaimer">Prototype only: this form does not send or store information. Before launch, connect it to a secure, privacy-compliant form service and publish a reviewed Privacy Policy. Do not collect detailed clinical histories through a general enquiry form.</p>
         </form>
@@ -366,32 +913,71 @@
     </section>
   </main>
 
-  <aside class="emergency"><div class="wrap"><strong>Need urgent support?</strong> This practice is not an emergency service. In an emergency call 000 or attend your nearest Emergency Department. Other support contacts supplied in the practice material: Lifeline 13 11 14 · Beyond Blue 1300 22 4636 · Suicide Call Back Service 1300 659 467. Confirm details before launch.</div></aside>
-  <footer class="footer"><div class="wrap">
-    <div class="footer-top"><a class="brand" href="#home"><img src="assets/still-waters-logo-ivory.png" alt="Still Waters Wellbeing"></a><div class="footer-links"><a href="#about">About</a><a href="#support">How we can help</a><a href="#fees">Fees</a><a href="#faqs">FAQs</a><a href="#contact">Contact</a><a href="#">Privacy</a></div></div>
-    <div class="footer-bottom"><span>© <span id="year"></span> Still Waters Wellbeing. All rights reserved.</span><span>Clinical psychology · Mornington, Victoria</span></div>
-  </div></footer>
+  <aside class="emergency">
+    <div class="wrap">
+      <strong>Need urgent support?</strong> This practice is not an emergency service. In an emergency call 000 or attend your nearest Emergency Department. Other support contacts supplied in the practice material: Lifeline 13 11 14 · Beyond Blue 1300 22 4636 · Suicide Call Back Service 1300 659 467. Confirm details before launch.
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="brand" href="#home">
+          <img src="assets/still-waters-logo-ivory.png" alt="Still Waters Wellbeing">
+        </a>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#support">How we can help</a>
+          <a href="#fees">Fees</a>
+          <a href="#faqs">FAQs</a>
+          <a href="#contact">Contact</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Still Waters Wellbeing. All rights reserved.</span>
+        <span>Clinical psychology · Mornington, Victoria</span>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const toggle = document.getElementById('menuToggle');
     const links = document.getElementById('navLinks');
+
     toggle.addEventListener('click', () => {
-      const open = links.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.textContent = open ? 'Close' : 'Menu';
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      toggle.textContent = isOpen ? 'Close' : 'Menu';
     });
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Menu';
-    }));
+
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation');
+        toggle.textContent = 'Menu';
+      });
+    });
+
     document.getElementById('year').textContent = new Date().getFullYear();
+
     if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      }), {threshold:.12});
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    } else document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+
+      document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+    } else {
+      document.querySelectorAll('.reveal').forEach(element => element.classList.add('visible'));
+    }
+
     document.getElementById('enquiryForm').addEventListener('submit', event => {
       event.preventDefault();
       alert('This is a visual prototype. The enquiry form is not connected yet.');
