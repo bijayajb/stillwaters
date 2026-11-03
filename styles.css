@@ -447,3 +447,48 @@ html {
     padding-top: 135px;
   }
 }
+
+
+/* FINAL NAV BAR REFINEMENT: use the full bar, reduce height, enlarge menu text */
+@media (min-width: 901px) {
+  .nav-inner {
+    min-height: 82px;
+    padding: 8px 30px;
+    gap: clamp(22px, 3vw, 48px);
+  }
+
+  .site-nav .brand {
+    flex: 0 0 190px;
+  }
+
+  .site-nav .brand img {
+    width: 190px !important;
+    max-height: 68px !important;
+  }
+
+  .nav-links {
+    flex: 1 1 auto;
+    justify-content: space-between;
+    gap: clamp(18px, 2.5vw, 42px);
+  }
+
+  .nav-links a {
+    font-size: clamp(.68rem, .76vw, .78rem);
+    letter-spacing: .10em;
+  }
+
+  .nav-cta {
+    padding: 11px 17px;
+    font-size: .70rem;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 681px) {
+  .nav-inner {
+    min-height: 78px;
+  }
+
+  .nav-links a {
+    font-size: .62rem;
+  }
+}
