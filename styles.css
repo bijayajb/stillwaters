@@ -176,7 +176,7 @@ textarea { min-height: 100px; resize: vertical; }
 .emergency strong { color: var(--forest); }
 .footer { background: #10372f; color: rgba(244,240,231,.75); padding: 48px 0 24px; }
 .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,.16); }
-.footer .brand img { width: 175px; background: var(--cream); padding: 7px 10px; border-radius: 2px; }
+.footer .brand img { width: 175px; max-height: 68px; object-fit: contain; background: transparent; padding: 0; border-radius: 0; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
 .footer-links a { font-size: .63rem; letter-spacing: .12em; text-transform: uppercase; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; font-size: .66rem; }
