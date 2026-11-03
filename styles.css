@@ -230,3 +230,27 @@ textarea{min-height:100px;resize:vertical}
   .footer-top,.footer-bottom{align-items:flex-start;flex-direction:column}
   .footer-links{gap:14px}
 }
+
+/* OUR APPROACH — remove waterfall image */
+.approach-image {
+    display: none !important;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: auto;
+}
+
+.approach-copy {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 40px;
+}
+
+@media (max-width: 760px) {
+    .approach-copy {
+        padding: 65px 25px;
+    }
+}
