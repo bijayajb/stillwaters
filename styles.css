@@ -311,3 +311,24 @@
     line-height: .98;
   }
 }
+
+/* Increase header logo size */
+.site-header .brand img,
+header .brand img,
+.navbar .brand img {
+    width: 300px !important;
+    height: 85px !important;
+    max-width: 100%;
+    max-height: none !important;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* Keep logo container aligned */
+.site-header .brand,
+header .brand,
+.navbar .brand {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+}
