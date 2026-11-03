@@ -332,3 +332,118 @@ header .brand,
     align-items: center;
     padding: 8px 16px;
 }
+/* UPDATED STICKY NAVIGATION — full-width menu distribution */
+.site-nav {
+  position: fixed;
+  top: 14px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(18px, 2.4vw, 36px);
+  min-height: 96px;
+  padding: 10px 26px;
+  background: rgba(250, 248, 241, .97);
+  box-shadow: 0 10px 38px rgba(10, 35, 27, .12);
+}
+
+.site-nav .brand {
+  display: flex;
+  align-items: center;
+  flex: 0 0 220px;
+  padding: 0;
+}
+
+.site-nav .brand img {
+  width: 220px !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 82px !important;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.nav-links {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: clamp(12px, 1.8vw, 28px);
+}
+
+.nav-links a {
+  white-space: nowrap;
+  font-size: clamp(.58rem, .65vw, .68rem);
+}
+
+.nav-cta {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 13px 18px;
+}
+
+/* Prevent anchor destinations from disappearing behind the fixed menu. */
+html {
+  scroll-padding-top: 132px;
+}
+
+@media (max-width: 900px) and (min-width: 681px) {
+  .nav-inner {
+    gap: 14px;
+    padding-inline: 16px;
+    min-height: 88px;
+  }
+  .site-nav .brand {
+    flex-basis: 175px;
+  }
+  .site-nav .brand img {
+    width: 175px !important;
+    max-height: 70px !important;
+  }
+  .nav-links {
+    gap: 10px;
+  }
+  .nav-links a {
+    font-size: .54rem;
+    letter-spacing: .07em;
+  }
+  .nav-cta {
+    padding: 10px 11px;
+    font-size: .55rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-nav {
+    top: 8px;
+  }
+  .nav-inner {
+    min-height: 70px;
+    padding: 8px 12px;
+    gap: 10px;
+  }
+  .site-nav .brand {
+    flex: 0 1 175px;
+  }
+  .site-nav .brand img {
+    width: 165px !important;
+    max-height: 58px !important;
+  }
+  .nav-links {
+    flex: initial;
+    justify-content: flex-start;
+    top: 78px;
+  }
+  html {
+    scroll-padding-top: 95px;
+  }
+  .hero-content {
+    padding-top: 135px;
+  }
+}
