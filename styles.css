@@ -206,41 +206,108 @@
 }
 
 
-/* ABOUT SECTION FIX: show Michelle's portrait only; remove any old waterfall
-   background or decorative image layer that may remain in a cached stylesheet. */
-.about-image {
-  background: none !important;
-  background-image: none !important;
+/* INTRO IMAGE — editorial oasis feature */
+.intro-grid {
+  grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+  gap: clamp(42px, 6vw, 88px);
+  align-items: center;
+}
+
+.intro-grid > * {
+  min-width: 0;
+}
+
+.intro-image {
   position: relative;
+  width: 100%;
+  height: clamp(470px, 43vw, 590px);
+  min-height: 470px;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
-  min-height: 0 !important;
-  height: auto;
+  isolation: isolate;
+  background: #dce2d5;
+  border-radius: 3px 145px 3px 3px;
+  box-shadow: 0 22px 55px rgba(24, 63, 53, .13);
 }
-.about-image::before,
-.about-image::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-}
-.about-image img {
+
+.intro-image img {
   display: block;
-  position: relative;
-  z-index: 1;
   width: 100%;
   height: 100%;
-  min-height: 0 !important;
-  aspect-ratio: 4 / 5;
+  min-height: 0;
   object-fit: cover;
-  object-position: center 35%;
-  border-radius: 2px 110px 2px 2px;
+  object-position: 48% center;
+  border-radius: inherit;
+  transition: transform .8s cubic-bezier(.2,.65,.3,1);
 }
-@media (max-width: 760px) {
-  .about-image {
-    aspect-ratio: 4 / 5;
-    min-height: 0 !important;
+
+.intro-image:hover img {
+  transform: scale(1.035);
+}
+
+.intro-image::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 15px;
+  border: 1px solid rgba(248, 245, 236, .72);
+  border-radius: 2px 128px 2px 2px;
+  pointer-events: none;
+}
+
+.intro-content {
+  min-width: 0;
+}
+
+.intro h2 {
+  max-width: 760px;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+.intro-copy {
+  max-width: 680px;
+}
+
+/* Stack the feature before the text when there is not enough room
+   for two comfortable columns. */
+@media (max-width: 900px) {
+  .intro-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+    align-items: start;
   }
-  .about-image img {
-    min-height: 0 !important;
+
+  .intro-image {
+    width: min(100%, 650px);
+    height: clamp(340px, 58vw, 470px);
+    min-height: 0;
+    border-top-right-radius: 115px;
+  }
+
+  .intro-image::after {
+    border-top-right-radius: 98px;
+  }
+
+  .intro-content {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 680px) {
+  .intro-image {
+    width: 100%;
+    height: 330px;
+    min-height: 0;
+    border-top-right-radius: 85px;
+  }
+
+  .intro-image::after {
+    inset: 11px;
+    border-top-right-radius: 72px;
+  }
+
+  .intro h2 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+    line-height: .98;
   }
 }
