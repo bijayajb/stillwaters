@@ -641,3 +641,18 @@
 /* With the monogram removed, let the supporting statement sit naturally. */
 .about-aside { justify-content: center; }
 .about-aside p { margin: 0; max-width: 330px; }
+
+
+/* Hero call-to-action buttons — burnt orange */
+.hero-cta,
+.hero-cta.booking {
+  background: #b85f36;
+  border-color: #b85f36;
+  color: #ffffff;
+}
+.hero-cta:hover,
+.hero-cta.booking:hover {
+  background: #984927;
+  border-color: #984927;
+  color: #ffffff;
+}
