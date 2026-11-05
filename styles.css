@@ -335,3 +335,19 @@ header .logo img {
     margin: 0;
     text-align: center;
 }
+
+/* Hero buttons — 2 columns, 2 rows */
+.hero-buttons {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 660px;
+}
+
+.hero-buttons a {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+}
