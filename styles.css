@@ -1142,3 +1142,53 @@ html {
   .why-principle { min-height: 43px; padding: 0 14px; }
   .why-principle strong { font-size: .68rem; }
 }
+
+/* Photo strip now sits beneath the therapeutic outcomes */
+.why-photo-strip {
+  margin-top: clamp(30px, 4vw, 48px);
+  margin-bottom: 0;
+}
+
+
+/* HERO CARD — slightly wider with a top-right practice logo */
+.hero-card {
+  position: relative;
+  max-width: 740px;
+  padding: 48px 58px 46px;
+}
+.hero-card-logo {
+  position: absolute;
+  top: 26px;
+  right: 34px;
+  display: block;
+  width: clamp(108px, 15vw, 148px);
+  height: auto;
+  max-height: 76px;
+  object-fit: contain;
+  object-position: right top;
+}
+.hero-location {
+  max-width: calc(100% - 165px);
+  padding-right: 8px;
+}
+.hero-intro {
+  max-width: 640px;
+}
+@media (max-width: 760px) {
+  .hero-card {
+    max-width: 100%;
+    padding: 112px 28px 32px;
+  }
+  .hero-card-logo {
+    top: 22px;
+    right: 26px;
+    width: 124px;
+    max-height: 64px;
+  }
+  .hero-location {
+    max-width: 100%;
+  }
+  .hero-intro {
+    max-width: 100%;
+  }
+}
